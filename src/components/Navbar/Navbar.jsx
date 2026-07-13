@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
-import logo from "../Assets/OIP.jpg";
+import logo from "../Assets/fruits/logo.jpg";
 import cart from "../Assets/cart_icon.png";
 import "./Navbar.css";
 import { Link } from "react-router-dom";

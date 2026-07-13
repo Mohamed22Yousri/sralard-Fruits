@@ -1,4 +1,3 @@
-import p1_img from "./product_1.png";
 import p2_img from "./product_2.png";
 import p3_img from "./product_3.png";
 import p4_img from "./product_4.png";
@@ -10,14 +9,6 @@ import p9_img from "./product_9.png";
 import p10_img from "./product_10.png";
 import p11_img from "./product_11.png";
 import p12_img from "./product_12.png";
-import p17_img from "./product_17.png";
-import p18_img from "./product_18.png";
-import p19_img from "./product_19.png";
-import p20_img from "./product_20.png";
-import p21_img from "./product_21.png";
-import p22_img from "./product_22.png";
-import p23_img from "./product_23.png";
-import p24_img from "./product_24.png";
 import p25_img from "./product_25.png";
 import p26_img from "./product_26.png";
 import p27_img from "./product_27.png";
@@ -30,195 +21,228 @@ import p33_img from "./product_33.png";
 import p34_img from "./product_34.png";
 import p35_img from "./product_35.png";
 import p36_img from "./product_36.png";
-import mango_img from "../Assets/fruits/mango.jpg";
-import apple_img from "../Assets/fruits/apple.jpg";
-import melon from '../Assets/fruits/melon.jpg'
+import manga1 from "../Assets/fruits/mango1.jpg";
+import manga2 from "../Assets/fruits/mango2.jpg";
+import manga3 from "../Assets/fruits/mango3.jpg";
+import manga4 from "../Assets/fruits/mango4.jpg";
+import manga5 from "../Assets/fruits/mango5.jpg";
+import manga6 from "../Assets/fruits/mango6.jpg";
+import manga7 from "../Assets/fruits/mango7.jpg";
+import manga8 from "../Assets/fruits/mango8.jpg";
+import bannane from "../Assets/fruits/moz.jpg";
+import ten from "../Assets/fruits/tenbr4wmy.jpg";
+import orange from "../Assets/fruits/orange.jpg";
+import bte5 from "../Assets/fruits/bte5.jpg";
+import anab from "../Assets/fruits/3nb1.jpg";
+import anab1 from "../Assets/fruits/3nb2.jpg";
+import anab2 from "../Assets/fruits/3nab3.jpg";
+import anab3 from "../Assets/fruits/3nab4.jpg";
+import apple1 from "../Assets/fruits/tfa7a7mr1.jpg";
+import apple2 from "../Assets/fruits/tfa7a7mr2.jpg";
+import apple3 from "../Assets/fruits/tfa7amrekany.jpg";
+import apple4 from "../Assets/fruits/tfa7asfr.jpg";
+import apple5 from "../Assets/fruits/tfa7asfr2.jpg";
+import apple6 from "../Assets/fruits/tfa7green.jpg";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let all_product = [
- 
   {
     id: 1,
-    name: " شمام",
+    name: " موز",
     category: "fruits",
-    image: melon,
-    new_price: 20.0,
+    image: bannane,
+    new_price: 45.0,
     old_price: 120.5,
   },
   {
     id: 2,
-    name: "مانجا عويسي",
+    name: " تين برشومي",
     category: "fruits",
-    image: mango_img,
-    new_price: 40.0,
+    image: ten,
+    new_price: 80.0,
     old_price: 120.5,
   },
   {
     id: 3,
-    name: "تفاح",
+    name: "برتقال بلدي",
     category: "fruits",
-    image: apple_img,
-    new_price: 95.0,
+    image: orange,
+    new_price: 35.0,
     old_price: 120.5,
   },
   {
     id: 4,
-    name: "تفاح",
+    name: "بطيخ",
     category: "fruits",
-    image: apple_img,
-    new_price: 95.0,
+    image: bte5,
+    new_price: 30.0,
     old_price: 120.5,
   },
   {
     id: 5,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "مانجا زبديه",
     category: "fruits",
-    image: p17_img,
-    new_price: 85.0,
+    image: manga1,
+    new_price: 70.0,
     old_price: 120.5,
   },
   {
     id: 6,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "مانجا سناره",
     category: "fruits",
-    image: p18_img,
-    new_price: 85.0,
+    image: manga2,
+    new_price: 80.0,
     old_price: 120.5,
   },
   {
     id: 7,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "مانجا صديقه",
     category: "fruits",
-    image: p19_img,
-    new_price: 85.0,
+    image: manga3,
+    new_price: 80.0,
     old_price: 120.5,
   },
   {
     id: 8,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "مانجا سكري",
     category: "fruits",
-    image: p20_img,
-    new_price: 85.0,
+    image: manga4,
+    new_price: 140.0,
     old_price: 120.5,
   },
   {
     id: 9,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "مانجا تيمور",
     category: "fruits",
-    image: p21_img,
-    new_price: 85.0,
+    image: manga5,
+    new_price: 120.0,
     old_price: 120.5,
   },
   {
     id: 10,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "مانجا عوسي",
     category: "fruits",
-    image: p22_img,
-    new_price: 85.0,
+    image: manga6,
+    new_price: 160.0,
     old_price: 120.5,
   },
   {
     id: 11,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "مانجا نعومي",
     category: "fruits",
-    image: p23_img,
-    new_price: 85.0,
+    image: manga7,
+    new_price: 140.0,
     old_price: 120.5,
   },
   {
     id: 12,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "مانجا فص",
     category: "fruits",
-    image: p24_img,
-    new_price: 85.0,
+    image: manga8,
+    new_price: 250.0,
     old_price: 120.5,
   },
-   {
+  {
     id: 13,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p1_img,
-    new_price: 50.0,
-    old_price: 80.5,
+    name: " عنب بناتي",
+    category: "fruits",
+    image: anab,
+    new_price: 100.0,
+    old_price: 120.5,
   },
   {
     id: 14,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p2_img,
-    new_price: 85.0,
+   name: " عنب احمر",
+    category: "fruits",
+    image: anab1,
+    new_price: 100.0,
     old_price: 120.5,
   },
   {
     id: 15,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p3_img,
-    new_price: 60.0,
-    old_price: 100.5,
+   name: " عنب بلاك",
+    category: "fruits",
+    image: anab2,
+    new_price: 80.0,
+    old_price: 120.5,
   },
   {
     id: 16,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p4_img,
+   name: " عنب كريمسون",
+    category: "fruits",
+    image: anab3,
     new_price: 100.0,
-    old_price: 150.0,
+    old_price: 120.5,
   },
   {
     id: 17,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p5_img,
-    new_price: 85.0,
+   name: " تفاح بلدي ",
+    category: "fruits",
+    image: apple1,
+    new_price: 100.0,
     old_price: 120.5,
   },
   {
     id: 18,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p6_img,
-    new_price: 85.0,
+   name: " تفاح احمر ",
+    category: "fruits",
+    image: apple2,
+    new_price: 120.0,
     old_price: 120.5,
   },
   {
     id: 19,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p7_img,
-    new_price: 85.0,
-    old_price: 120.5,
+   name: " تفاح احمر ",
+    category: "fruits",
+    image: apple2,
+    new_price: 160.0,
+    old_price: 140.5,
   },
   {
     id: 20,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p8_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    name: " تفاح اصفر ",
+    category: "fruits",
+    image: apple4,
+    new_price: 100.0,
+    old_price: 140.5,
   },
   {
     id: 21,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p9_img,
-    new_price: 85.0,
-    old_price: 120.5,
+      name: " تفاح اصفر ",
+    category: "fruits",
+    image: apple5,
+    new_price: 140.0,
+    old_price: 140.5,
   },
   {
     id: 22,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p10_img,
-    new_price: 85.0,
+     name: " تفاح امريكاني ",
+    category: "fruits",
+    image: apple3,
+    new_price: 200.0,
     old_price: 120.5,
   },
   {
     id: 23,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
-    category: "vegetables",
-    image: p11_img,
-    new_price: 85.0,
+    name: "تفاح اخضر",
+ category: "fruits",
+     image: apple6,
+    new_price: 200.0,
     old_price: 120.5,
   },
   {
