@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import footerLogo from "../Assets/OIP.jpg";
+import footerLogo from "../Assets/fruits/logo.jpg";
 import instagram from "../Assets/instagram_icon.png";
 import pintester from "../Assets/pintester_icon.png";
 import whatsapp from "../Assets/whatsapp_icon.png";
