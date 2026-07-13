@@ -14,6 +14,30 @@
     height: 70px;
     width: 171px;
 }
+.arrow-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.arrow-icon {
+  font-size: 40px;
+  color: #28a745;
+  animation: bounce 1.2s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(12px);
+  }
+}
 .descriptionBox-nav-box.fade{
     color: #555;
     background-color: #fbfbfb;

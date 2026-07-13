@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import banner_men from './components/Assets/banner_mens.png'
 import banner_women from './components/Assets/banner_women.png'
 import banner_kids from './components/Assets/banner_kids.png'
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
             <Navbar/>
             <Routes>
               <Route path='/' element ={<Shop/>}/>
-              <Route path='/mens' element={<ShopCategory category="men" banner={banner_men}/>}/>
-              <Route path='/womens' element={<ShopCategory category="women" banner={banner_women}/>}/>
-              <Route path='/kids' element={<ShopCategory category="kid" banner={banner_kids}/>}/>
+              <Route path='/fruits' element={<ShopCategory category="fruits" banner={banner_men}/>}/>
+              <Route path='/vegetables' element={<ShopCategory category="vegetables" banner={banner_women}/>}/>
+              <Route path='/Extras' element={<ShopCategory category="Extras" banner={banner_kids}/>}/>
               <Route path='/prodcut' element={<Prodcut/>}>
               <Route path=':prdocutId' element={<Prodcut/>}/>
               </Route>

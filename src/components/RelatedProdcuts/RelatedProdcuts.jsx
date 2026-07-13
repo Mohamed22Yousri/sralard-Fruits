@@ -6,7 +6,7 @@ import './RelatedProdcuts.css'
 const RelatedProdcuts = () => {
   return (
     <div className='relatedProdcuts'>
-        <h1>Related Prodcuts</h1>
+        <h1>المنتجات</h1>
         <hr/>
         <div className="relatedProdcuts-item">
             {data.map((item , i)=>{

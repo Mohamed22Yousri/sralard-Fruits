@@ -24,6 +24,21 @@
         margin: 20px 80px;
         margin-bottom: 150px;
 }
+.category-prodcuts .item p {
+    display:flex;
+    justify-content: right;
+    align-items: right;    
+    font-size: 14px;
+    font-weight: 600;
+}
+.category-prodcuts .items-prices {
+    display: flex;
+    justify-content: right;
+    align-items: right;   
+    padding: 0 10px;
+    color: #3d3d3d;
+    background-color: #ededed; 
+}
 .shopCategory-loadmore{
     display: flex;
     justify-content: center;
