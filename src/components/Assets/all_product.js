@@ -710,12 +710,12 @@ let all_product = [
   },
   {
     id: 78,
-    name: "  تين شوكي ",
+    name: " طبق تين شوكي ",
     category: "fruits",
     image: am,
-    new_price: 10.0,
+    new_price: 50.0,
     old_price: 120.5,
-    unit: "1 تين ",
+    unit: "1 طبق ",
   },
 ];
 
