@@ -16,7 +16,7 @@ const Item = (props) => {
 
       <div className="items-prices">
         <div dir="rtl" className="price-new">
-         {props.new_price} جنيه للكيلو
+         {props.new_price} جنيه 500 جرام
         </div>
 
       </div>

@@ -101,6 +101,36 @@
     background-color: black;
     cursor: pointer;
 }
+.cart-quantity{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+}
+
+.qty-btn{
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:6px;
+    background:#28a745;
+    color:#fff;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.qty-btn:hover{
+    background:#218838;
+}
+
+.qty-number{
+    width:35px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+}
 @media(max-width:1280px){
     .cartiems{
         margin: 60px 50px;

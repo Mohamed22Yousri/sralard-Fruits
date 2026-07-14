@@ -5,15 +5,20 @@ import { ShopContext } from "../context/ShopContext";
 import ModalOrder from "../item/ModalOrder";
 
 const CartIems = () => {
-  const { getTotalCartAmount, all_prodcut, cartItems, removeFromCart } =
-    useContext(ShopContext);
+  const {
+    getTotalCartAmount,
+    all_prodcut,
+    cartItems,
+    addToCart,
+    removeFromCart,
+    deleteFromCart,
+  } = useContext(ShopContext);
 
   const [showModal, setShowModal] = useState(false);
 
   const shipping = 15;
   const total = getTotalCartAmount() + shipping;
 
-  // المنتجات التي سيتم إرسالها إلى Supabase
   const orderItems = all_prodcut
     .filter((item) => cartItems[item.id] > 0)
     .map((item) => ({
@@ -27,12 +32,12 @@ const CartIems = () => {
   return (
     <div className="cartiems">
       <div className="Cartitems-format-main">
-        <p>Products</p>
-        <p>Title</p>
-        <p>Price</p>
-        <p>Quantity</p>
-        <p>Total</p>
-        <p>Remove</p>
+        <p>المنتج</p>
+        <p>الوصف</p>
+        <p>السعر</p>
+        <p>الكمية</p>
+        <p>الإجمالي</p>
+        <p>حذف</p>
       </div>
 
       <hr />
@@ -48,20 +53,39 @@ const CartIems = () => {
                   className="carticon-prodcut-icon"
                 />
 
-                <p>{e.name}</p>
-                <p>{e.new_price} EGP</p>
+                <p>{e.name}, 500 جرام</p>
 
-                <button className="carticon-quantity">
-                  {cartItems[e.id]}
-                </button>
+                <p>{e.new_price} ج.م</p>
 
-                <p>{e.new_price * cartItems[e.id]} EGP</p>
+                <div className="cart-quantity">
+
+                  <button
+                    className="qty-btn"
+                    onClick={() => removeFromCart(e.id)}
+                  >
+                    -
+                  </button>
+
+                  <span className="qty-number">
+                    {cartItems[e.id]}
+                  </span>
+
+                  <button
+                    className="qty-btn"
+                    onClick={() => addToCart(e.id)}
+                  >
+                    +
+                  </button>
+
+                </div>
+
+                <p>{e.new_price * cartItems[e.id]} ج.م</p>
 
                 <img
                   className="carticon-remove"
                   src={remove_icon}
                   alt=""
-                  onClick={() => removeFromCart(e.id)}
+                  onClick={() => deleteFromCart(e.id)}
                 />
               </div>
 
@@ -75,32 +99,38 @@ const CartIems = () => {
 
       <div className="cartitems-down">
         <div className="cartiems-total">
-          <h1 style={{ textAlign: "center" }}>اجمالي السله</h1>
+
+          <h1 style={{ textAlign: "center" }}>
+            إجمالي السلة
+          </h1>
 
           <div>
+
             <div className="cartiems-total-item">
               <p>الحساب</p>
-              <p>{getTotalCartAmount()} EGP</p>
+              <p>{getTotalCartAmount()} ج.م</p>
             </div>
 
             <hr />
 
             <div className="cartiems-total-item">
               <p>التوصيل</p>
-              <p>{shipping} EGP</p>
+              <p>{shipping} ج.م</p>
             </div>
 
             <hr />
 
             <div className="cartiems-total-item">
               <h3>الإجمالي</h3>
-              <h3>{total} EGP</h3>
+              <h3>{total} ج.م</h3>
             </div>
+
           </div>
 
           <button onClick={() => setShowModal(true)}>
             اطلب الآن
           </button>
+
         </div>
 
         <ModalOrder
@@ -108,6 +138,7 @@ const CartIems = () => {
           onClose={() => setShowModal(false)}
           cartItems={orderItems}
         />
+
       </div>
     </div>
   );

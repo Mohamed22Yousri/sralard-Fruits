@@ -1,70 +1,90 @@
-import { React , createContext, useState } from "react";
-import all_prodcut from '../Assets/all_product'
+import React, { createContext, useState } from "react";
+import all_prodcut from "../Assets/all_product";
 
+export const ShopContext = createContext(null);
 
+const getDefaultCart = () => {
+  let cart = {};
 
-export const ShopContext = createContext(null)
+  for (let i = 0; i <= all_prodcut.length; i++) {
+    cart[i] = 0;
+  }
 
-const getDefaultCart = () =>{
-    let cart = {};
-    for (let index = 0; index < all_prodcut.length+1; index++) {
-        cart[index] = 0
-    }
-    return cart;
-}
+  return cart;
+};
 
-const ShopContextProvider = (props) =>{
-    
+const ShopContextProvider = (props) => {
+  const [cartItems, SetCartItems] = useState(getDefaultCart());
 
-    const [cartItems , SetCartItems] = useState(getDefaultCart())
+  // إضافة منتج
+  const addToCart = (itemId) => {
+    SetCartItems((prev) => ({
+      ...prev,
+      [itemId]: prev[itemId] + 1,
+    }));
+  };
 
+  // تقليل الكمية
+  const removeFromCart = (itemId) => {
+    SetCartItems((prev) => ({
+      ...prev,
+      [itemId]: prev[itemId] > 0 ? prev[itemId] - 1 : 0,
+    }));
+  };
 
-        const addToCart = ((itemId)=>{
-                SetCartItems((prev)=>({...prev ,[itemId]:prev[itemId]+1}))
-        })
-        const removeFromCart = ((itemId)=>{
-            SetCartItems((prev)=>({...prev ,[itemId]:prev[itemId]-1}))
-    })
-            
-    const getTotalCartAmount = () =>{
-        let totalAmount = 0
-        for(const item in cartItems)
-        {
-            if(cartItems[item]>0)
-            {
-                let itemInfo = all_prodcut.find((prodcut)=>prodcut.id=== Number(item))
-                totalAmount += itemInfo.new_price * cartItems[item]
-            }            
+  // حذف المنتج بالكامل
+  const deleteFromCart = (itemId) => {
+    SetCartItems((prev) => ({
+      ...prev,
+      [itemId]: 0,
+    }));
+  };
 
-        } 
-         return totalAmount
-    }
+  // إجمالي السعر
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
 
-    const getTotalCartItems = () =>{
-        let totalItems = 0
-        for(const item in cartItems)
-        {
-            if(cartItems[item]>0)
-            {
-                totalItems +=cartItems[item]
-            }
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        const itemInfo = all_prodcut.find(
+          (product) => product.id === Number(item)
+        );
+
+        if (itemInfo) {
+          totalAmount += itemInfo.new_price * cartItems[item];
         }
-        return totalItems
+      }
     }
 
-        
+    return totalAmount;
+  };
 
-    const ShopValue = { getTotalCartItems,getTotalCartAmount, all_prodcut , cartItems , addToCart , removeFromCart }
+  // عدد المنتجات
+  const getTotalCartItems = () => {
+    let totalItems = 0;
 
-          
-            
-        return(
-            <ShopContext.Provider value={ShopValue}>
-            {props.children}
-        </ShopContext.Provider>
-        )
-       
-}
+    for (const item in cartItems) {
+      totalItems += cartItems[item];
+    }
 
+    return totalItems;
+  };
 
-export default ShopContextProvider
+  const ShopValue = {
+    all_prodcut,
+    cartItems,
+    addToCart,
+    removeFromCart,
+    deleteFromCart,
+    getTotalCartAmount,
+    getTotalCartItems,
+  };
+
+  return (
+    <ShopContext.Provider value={ShopValue}>
+      {props.children}
+    </ShopContext.Provider>
+  );
+};
+
+export default ShopContextProvider;

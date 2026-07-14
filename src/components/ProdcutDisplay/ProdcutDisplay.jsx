@@ -30,7 +30,7 @@ const ProdcutDisplay = (props) => {
         </div>
         <div className="prodcutDisplay-right-prices">
           <div className="prodcutDisplay-right-new-price">
-            <span dir="rtl">{prodcut.new_price} جنيه / للكيلو</span>{" "}
+            <span dir="rtl">{prodcut.new_price} جنيه / 500 جرام</span>{" "}
           </div>
         </div>
         <div className="prodcutDisplay-right-size"></div>
