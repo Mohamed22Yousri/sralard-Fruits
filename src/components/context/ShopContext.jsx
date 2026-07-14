@@ -3,12 +3,13 @@ import all_prodcut from "../Assets/all_product";
 
 export const ShopContext = createContext(null);
 
+// إنشاء السلة بناءً على IDs المنتجات
 const getDefaultCart = () => {
   let cart = {};
 
-  for (let i = 0; i <= all_prodcut.length; i++) {
-    cart[i] = 0;
-  }
+  all_prodcut.forEach((item) => {
+    cart[item.id] = 0;
+  });
 
   return cart;
 };
@@ -20,7 +21,7 @@ const ShopContextProvider = (props) => {
   const addToCart = (itemId) => {
     SetCartItems((prev) => ({
       ...prev,
-      [itemId]: prev[itemId] + 1,
+      [itemId]: (prev[itemId] || 0) + 1,
     }));
   };
 
@@ -51,7 +52,7 @@ const ShopContextProvider = (props) => {
         );
 
         if (itemInfo) {
-          totalAmount += itemInfo.new_price * cartItems[item];
+          totalAmount += Number(itemInfo.new_price) * cartItems[item];
         }
       }
     }

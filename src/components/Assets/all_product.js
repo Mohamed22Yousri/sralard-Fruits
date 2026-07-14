@@ -637,7 +637,7 @@ let all_product = [
     unit: "500 جرام",
   },
   {
-    id: 69,
+    id: 68,
     name: " ليمون ",
     category: "vegetables",
     image: af,
@@ -646,7 +646,7 @@ let all_product = [
     unit: "500 جرام",
   },
   {
-    id: 70,
+    id: 69,
     name: " كوسا ",
     category: "vegetables",
     image: as,
@@ -655,16 +655,16 @@ let all_product = [
     unit: "500 جرام",
   },
   {
-    id: 72,
+    id: 70,
     name: " ورق عنب ",
     category: "vegetables",
     image: ah,
     new_price: 70.0,
-    old_price: 70.0,
+    old_price: 80.0,
     unit: "500 جرام",
   },
   {
-    id: 73,
+    id: 71,
     name: " طماطم ",
     category: "vegetables",
     image: ak,
@@ -673,7 +673,7 @@ let all_product = [
     unit: "500 جرام",
   },
   {
-    id: 74,
+    id: 72,
     name: " طبق ثوم فص ",
     category: "vegetables",
     image: au,
@@ -682,7 +682,7 @@ let all_product = [
     unit: "1 طبق",
   },
   {
-    id: 75,
+    id: 73,
     name: " شبكه ثوم ",
     category: "vegetables",
     image: ap,
@@ -691,7 +691,7 @@ let all_product = [
     unit: " 1 شبكه",
   },
   {
-    id: 76,
+    id: 74,
     name: " ربطه نعناع ",
     category: "vegetables",
     image: aq,
@@ -700,7 +700,7 @@ let all_product = [
     unit: " ",
   },
   {
-    id: 77,
+    id: 75,
     name: " فلفل الوان ",
     category: "vegetables",
     image: x,
@@ -709,7 +709,7 @@ let all_product = [
     unit: "500 جرام",
   },
   {
-    id: 78,
+    id: 76,
     name: " طبق تين شوكي ",
     category: "fruits",
     image: am,
