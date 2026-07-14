@@ -53,7 +53,7 @@ const CartIems = () => {
                   className="carticon-prodcut-icon"
                 />
 
-                <p>{e.name}, 500 جرام</p>
+                <p>{e.name}, {e.unit} </p>
 
                 <p>{e.new_price} ج.م</p>
 

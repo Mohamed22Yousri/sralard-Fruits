@@ -11,6 +11,7 @@ import banner_men from './components/Assets/banner_mens.png'
 import banner_women from './components/Assets/banner_women.png'
 import banner_kids from './components/Assets/banner_kids.png'
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path='/login' element={<LoginSignUp/>}/>
             </Routes>
             <Footer/>
+            <ToastContainer />
       </BrowserRouter>
 
   );

@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { supabase } from "../../supabase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ModalOrder = ({ show, onClose, cartItems }) => {
   const {
@@ -16,7 +18,7 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
     try {
       const totalPrice = cartItems.reduce(
         (sum, item) => sum + item.price * item.quantity,
-        0
+        0,
       );
 
       const { error } = await supabase.from("orders").insert([
@@ -35,12 +37,12 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
         return;
       }
 
-      alert("تم إرسال الطلب بنجاح");
+      toast.success("تم إرسال الطلب بنجاح");
       reset();
       onClose();
     } catch (error) {
       console.log("Error:", error);
-      alert("حدث خطأ في الاتصال");
+      toast.error("حدث خطأ أثناء إرسال الطلب");
     }
   };
 
@@ -73,9 +75,7 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
                     })}
                   />
 
-                  <small className="text-danger">
-                    {errors.name?.message}
-                  </small>
+                  <small className="text-danger">{errors.name?.message}</small>
                 </div>
 
                 <div className="mb-3">
@@ -90,9 +90,7 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
                     })}
                   />
 
-                  <small className="text-danger">
-                    {errors.phone?.message}
-                  </small>
+                  <small className="text-danger">{errors.phone?.message}</small>
                 </div>
 
                 <div className="mb-3">
@@ -122,10 +120,7 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
                   إلغاء
                 </button>
 
-                <button
-                  type="submit"
-                  className="btn btn-success"
-                >
+                <button type="submit" className="btn btn-success">
                   تأكيد الطلب
                 </button>
               </div>

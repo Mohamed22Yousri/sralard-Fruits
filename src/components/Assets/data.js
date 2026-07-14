@@ -3,10 +3,6 @@ import ten from "../Assets/fruits/tenbr4wmy.jpg";
 import orange from "../Assets/fruits/orange.jpg";
 import bte5 from "../Assets/fruits/bte5.jpg";
 
-
-
-
-
 let data_product = [
   {
     id: 1,
@@ -15,6 +11,7 @@ let data_product = [
     image: bannane,
     new_price: 22.5,
     old_price: 120.5,
+    unit: "500 جرام",
   },
   {
     id: 2,
@@ -23,6 +20,7 @@ let data_product = [
     image: ten,
     new_price: 40.0,
     old_price: 120.5,
+    unit: "500 جرام",
   },
   {
     id: 3,
@@ -31,14 +29,16 @@ let data_product = [
     image: orange,
     new_price: 17.5,
     old_price: 120.5,
+    unit: "500 جرام",
   },
   {
     id: 4,
     name: "بطيخ",
     category: "fruits",
     image: bte5,
-    new_price: 15.0,
+    new_price: 30.0,
     old_price: 120.5,
+    unit: "1 كيلو",
   },
 ];
 
