@@ -14,6 +14,9 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
 
   if (!show) return null;
 
+  const BOT_TOKEN = "8651652084:AAG4U7_XxO3ZcqIczHJIyUAGZiOH1XMZGTE";
+  const CHAT_ID = "1942143709";
+
   const onSubmit = async (data) => {
     try {
       const totalPrice = cartItems.reduce(
@@ -33,15 +36,57 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
 
       if (error) {
         console.log("Supabase Error:", error);
-        alert("حدث خطأ أثناء إرسال الطلب");
+        toast.error("حدث خطأ أثناء إرسال الطلب");
         return;
       }
 
+      // تجهيز المنتجات
+      const products = cartItems
+        .map(
+          (item) =>
+            `🛒 ${item.name}
+الكمية: ${item.quantity}
+السعر: ${item.price} ج.م`,
+        )
+        .join("\n\n");
+
+      // رسالة تيليجرام
+      const message = `📦 طلب جديد
+
+👤 الاسم: ${data.name}
+📞 الهاتف: ${data.phone}
+📍 العنوان: ${data.address}
+
+${products}
+
+💰 الإجمالي: ${totalPrice} ج.م`;
+
+      const response = await fetch(
+        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message,
+          }),
+        },
+      );
+
+      const result = await response.json();
+      console.log(result.description);
+      if (!result.ok) {
+        toast.error(result.description);
+      }
+
       toast.success("تم إرسال الطلب بنجاح");
+
       reset();
       onClose();
     } catch (error) {
-      console.log("Error:", error);
+      console.log(error);
       toast.error("حدث خطأ أثناء إرسال الطلب");
     }
   };
@@ -52,8 +97,9 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">إتمام الطلب</h5>
-
+              <h5 style={{ margin: "auto" }} className="modal-title">
+                إتمام الطلب
+              </h5>
               <button
                 type="button"
                 className="btn-close"
@@ -63,10 +109,11 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="modal-body">
-                <div className="mb-3">
+                <div className="mb-3" style={{ textAlign: "right" }}>
                   <label className="form-label">الاسم</label>
 
                   <input
+                    dir="rtl"
                     type="text"
                     className="form-control"
                     placeholder="اكتب اسمك"
@@ -78,10 +125,11 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
                   <small className="text-danger">{errors.name?.message}</small>
                 </div>
 
-                <div className="mb-3">
+                <div className="mb-3" style={{ textAlign: "right" }}>
                   <label className="form-label">رقم الهاتف</label>
 
                   <input
+                    dir="rtl"
                     type="text"
                     className="form-control"
                     placeholder="01xxxxxxxxx"
@@ -93,10 +141,11 @@ const ModalOrder = ({ show, onClose, cartItems }) => {
                   <small className="text-danger">{errors.phone?.message}</small>
                 </div>
 
-                <div className="mb-3">
+                <div className="mb-3" style={{ textAlign: "right" }}>
                   <label className="form-label">العنوان</label>
 
                   <textarea
+                    dir="rtl"
                     rows="3"
                     className="form-control"
                     placeholder="اكتب العنوان"
