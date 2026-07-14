@@ -12,43 +12,25 @@ const Footer = () => {
       <div className="footer-logo">
         <img src={footerLogo} alt="" />
       </div>
-    <ul className="footer-link">
-  <li>
-    <Link
-      to="/Extras"
-      onClick={() => window.scrollTo(0, 0)}
-    >
-      اضافات
-    </Link>
-  </li>
+      <ul className="footer-link">
+        <li>
+          <Link to="/vegetables" onClick={() => window.scrollTo(0, 0)}>
+            خضروات
+          </Link>
+        </li>
 
-  <li>
-    <Link
-      to="/vegetables"
-      onClick={() => window.scrollTo(0, 0)}
-    >
-      خضروات
-    </Link>
-  </li>
+        <li>
+          <Link to="/fruits" onClick={() => window.scrollTo(0, 0)}>
+            فواكهه
+          </Link>
+        </li>
 
-  <li>
-    <Link
-      to="/fruits"
-      onClick={() => window.scrollTo(0, 0)}
-    >
-      فواكهه
-    </Link>
-  </li>
-
-  <li>
-    <Link
-      to="/"
-      onClick={() => window.scrollTo(0, 0)}
-    >
-      الرئيسية
-    </Link>
-  </li>
-</ul>
+        <li>
+          <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+            الرئيسية
+          </Link>
+        </li>
+      </ul>
       <div className="footer-social-icon">
         <div className="footer-icons-container">
           <img src={instagram} alt="" />

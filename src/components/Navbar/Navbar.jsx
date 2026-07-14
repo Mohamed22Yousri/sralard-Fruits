@@ -28,9 +28,6 @@ function Navbar() {
         alt=""
       />
       <ul ref={menuRef} className="nav-menu nav-menu-visible">
-        <li onClick={() => setMenu("Extras")}>
-          <Link to="/Extras">اضافات</Link> {menu === "Extras" ? <hr /> : <></>}
-        </li>
         <li onClick={() => setMenu("vegetables")}>
           <Link to="/vegetables">خضروات</Link>{" "}
           {menu === "vegetables" ? <hr /> : <></>}

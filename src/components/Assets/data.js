@@ -13,7 +13,7 @@ let data_product = [
     name: " موز",
     category: "fruits",
     image: bannane,
-    new_price: 45.0,
+    new_price: 22.5,
     old_price: 120.5,
   },
   {
@@ -21,7 +21,7 @@ let data_product = [
     name: " تين برشومي",
     category: "fruits",
     image: ten,
-    new_price: 80.0,
+    new_price: 40.0,
     old_price: 120.5,
   },
   {
@@ -29,7 +29,7 @@ let data_product = [
     name: "برتقال بلدي",
     category: "fruits",
     image: orange,
-    new_price: 35.0,
+    new_price: 17.5,
     old_price: 120.5,
   },
   {
@@ -37,7 +37,7 @@ let data_product = [
     name: "بطيخ",
     category: "fruits",
     image: bte5,
-    new_price: 30.0,
+    new_price: 15.0,
     old_price: 120.5,
   },
 ];
