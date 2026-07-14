@@ -659,7 +659,7 @@ let all_product = [
     name: " ورق عنب ",
     category: "vegetables",
     image: ah,
-    new_price: 0.0,
+    new_price: 70.0,
     old_price: 70.0,
     unit: "500 جرام",
   },
