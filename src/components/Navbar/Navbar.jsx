@@ -10,7 +10,6 @@ function Navbar() {
   const cartRef = useRef();
 
   const [menu, setMenu] = useState("shop");
-  const [search, setSearch] = useState("");
 
   const { getTotalCartItems } = useContext(ShopContext);
 
